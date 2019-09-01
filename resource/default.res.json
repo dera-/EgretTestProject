@@ -1,0 +1,25 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,red_oni_png,blue_oni_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "red_oni_png",
+			"type": "image",
+			"url": "red_oni.png"
+		},
+		{
+			"name": "blue_oni_png",
+			"type": "image",
+			"url": "blue_oni.png"
+		}
+	]
+}
