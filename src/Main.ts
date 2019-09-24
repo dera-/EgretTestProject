@@ -8,11 +8,11 @@ class Main extends eui.UILayer {
  
     private addToStage() {
         Game.init(this.stage);
-        
         egret.startTick(this.tickLoop, this);
     }
 
-    tickLoop(timeStamp:number):boolean{
+    tickLoop(timeStamp:number):boolean {
+        // console.log(timeStamp);
         return false;
     }
 
@@ -137,15 +137,43 @@ class Chara extends UICompornent {
     method() {
         let sources:string[]= ["resource/blue_oni.png", "resource/red_oni.png"];
  
-        let karen0 : eui.Image = new eui.Image();
-        karen0.source = sources[0];
-        this.display.addChild(karen0);
+        // let karen0 : eui.Image = new eui.Image();
+        // karen0.source = sources[0];
+        // karen0.touchEnabled = true;
+        // karen0.addEventListener(egret.TouchEvent.TOUCH_TAP, () => {console.log("touched")}, this);
+
+        // this.display.addChild(karen0);
  
-        let karen1 : eui.Image = new eui.Image();
-        karen1.source = sources[1];
-        karen1.x = 500;
-        karen1.scaleX = 0.5;
-        karen1.scaleY = 0.5;
-        this.display.addChild(karen1);
+        // let karen1 : eui.Image = new eui.Image();
+        // karen1.source = sources[1];
+        // //karen1.x = 500;
+        // karen1.scaleX = 0.5;
+        // karen1.scaleY = 0.5;
+        // karen1.horizontalCenter = 0;
+        // karen1.verticalCenter = 500;
+        // this.display.addChild(karen1);
+
+        var shape:egret.Shape = new egret.Shape();
+        shape.graphics.beginFill(0xff00ff);
+        shape.graphics.drawRect(0, 0, 200, 100);//drawRect(x, y, width, hight);
+        shape.graphics.endFill();
+        shape.scaleX = 0.5;
+        shape.scaleY = 0.5;
+        shape.x = 200;
+        shape.y = 300;
+        this.display.addChild(shape);
+
+        var shape2:egret.Shape = new egret.Shape();
+        shape2.graphics.beginFill(0x00ff00);
+        shape2.graphics.drawRect(0, 0, 200, 100);//drawRect(x, y, width, hight);
+        shape2.graphics.endFill();
+        shape2.anchorOffsetX = 200;
+        shape2.anchorOffsetY = 100;
+        shape2.rotation = 90;
+        shape2.x = 200 + shape2.anchorOffsetX;
+        shape2.y = 300 + shape2.anchorOffsetY;
+        shape2.scaleX = 0.5;
+        shape2.scaleY = 0.5;
+        this.display.addChild(shape2);
     }
 }
